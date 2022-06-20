@@ -11,14 +11,23 @@
 
 ## 测试环境
  - System: Ubuntu 20.04 LTS ()
- - PHP 8.1 (fpm_gd_...)
- - Nginx (1.18.0)
+ - PHP 8.1.4 (fpm_gd_...)
+ - Nginx (1.20.1)
 
 ## 预览
 
 ## 使用方法
 
 1. 将本项目 clone 到你主题下
+2. 开启伪静态 (可选)
+```php
+location / {
+    index index.php index.html;
+    if (!-e $request_filename){
+        rewrite ^/(.*)$ /index.php last;
+    }
+}
+```
 
 ## 功能
-
+ - 
